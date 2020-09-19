@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Generics
 {
-    public class BTree<T> where T : IComparable, IFixedSizeText
+    public class BTree<T> where T : IComparable, IFixedSizeText, new()
     {
         private readonly string Path;
         private readonly int Degree;
@@ -44,12 +44,25 @@ namespace Generics
 
         private void Add(T val, int pos)
         {
-            var node = ChargeNode(Root);
+            var node = ChargeNode(pos);
+            if (node.IsFull())
+            {
+
+            }
         }
 
         private Node<T> ChargeNode(int id)
         {
-            return null;
+            var file = new FileStream(Path, FileMode.OpenOrCreate);
+            using StreamReader reader = new StreamReader(file, Encoding.ASCII);
+            for (int i = 0; i < id; i++)
+            {
+                reader.ReadLine();
+            }
+            string text = reader.ReadLine() + "|";
+            var node = new Node<T>(id, Degree, ValueTextLength);
+            node.CreateFromFixedText(text);
+            return node;
         }
     }
 }

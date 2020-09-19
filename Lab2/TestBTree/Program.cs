@@ -26,13 +26,13 @@ namespace TestBTree
                             var val = Console.ReadLine().Split(',');
                             foreach (string n in val)
                             {
-                                //tree.Add(int.Parse(n));
+                                tree.Add(new FixedInt { Value = int.Parse(n) });
                             }
                             break;
                         case 2:
                             Console.WriteLine("Coloque el txt encima de la consola");
                             string dir = Console.ReadLine();
-                            //Insertartxt(dir, tree);
+                            Insertartxt(dir, tree);
                             break;
                     }
                     Console.WriteLine("¿Desea seguir ingresando valores? 1.Si 2.No");
@@ -82,7 +82,7 @@ namespace TestBTree
                 {
                     if (list[i] != "")
                     {
-                        //tree.Add(int.Parse(list[i]));
+                        tree.Add(new FixedInt { Value = int.Parse(list[i]) });
                     }
                 }
             }
@@ -101,6 +101,14 @@ namespace TestBTree
             public int CompareTo(object obj)
             {
                 return this.Value.CompareTo(((FixedInt)obj).Value);
+            }
+
+            public void CreateFromFixedText(string text)
+            {
+                if (text.Trim() != "")
+                    Value = int.Parse(text);
+                else
+                    Value = 0;
             }
 
             public string ToFixedString()

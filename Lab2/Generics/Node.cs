@@ -4,9 +4,10 @@ using System.Text;
 
 namespace Generics
 {
-    class Node<T> : IFixedSizeText where T : IComparable, IFixedSizeText
+    class Node<T> : IFixedSizeText where T : IComparable, IFixedSizeText, new()
     {
         public int ID;
+        public int Degree;
         public T[] Values;
         public int[] Sons;
         public int TextLength => ToFixedString().Length;
@@ -15,8 +16,9 @@ namespace Generics
         public Node(int id, int deg, int valLength)
         {
             ID = id;
-            Values = new T[deg - 1];
-            Sons = new int[deg];
+            Degree = deg;
+            Values = new T[Degree - 1];
+            Sons = new int[Degree];
             ValueTextLength = valLength;
         }
 
@@ -50,6 +52,22 @@ namespace Generics
                 return val.ToFixedString();
             else
                 return new string(' ', ValueTextLength);
+        }
+
+        public void CreateFromFixedText(string text)
+        {
+            text = text.Remove(0, 12);
+            for (int i = 0; i < Degree; i++)
+            {
+                Sons[i] = int.Parse(text.Substring(0, 11));
+                text = text.Remove(0, 12);
+            }
+            for (int i = 0; i < Degree - 1; i++)
+            {
+                Values[i] = new T();
+                Values[i].CreateFromFixedText(text.Substring(0, ValueTextLength));
+                text = text.Remove(0, ValueTextLength + 1);
+            }
         }
     }
 }
