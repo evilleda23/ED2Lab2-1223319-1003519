@@ -6,3 +6,12 @@ C:\Users\estua\source\repos\ED2Lab2-1223319-1003519\Lab2\Generics\obj\Debug\netc
 C:\Users\estua\source\repos\ED2Lab2-1223319-1003519\Lab2\Generics\obj\Debug\netcoreapp3.1\Generics.AssemblyInfo.cs
 C:\Users\estua\source\repos\ED2Lab2-1223319-1003519\Lab2\Generics\obj\Debug\netcoreapp3.1\Generics.dll
 C:\Users\estua\source\repos\ED2Lab2-1223319-1003519\Lab2\Generics\obj\Debug\netcoreapp3.1\Generics.pdb
+C:\Users\Home\Source\Repos\ED2Lab2-1223319-1003519\Lab2\Generics\bin\Debug\netcoreapp3.1\Generics.deps.json
+C:\Users\Home\Source\Repos\ED2Lab2-1223319-1003519\Lab2\Generics\bin\Debug\netcoreapp3.1\Generics.dll
+C:\Users\Home\Source\Repos\ED2Lab2-1223319-1003519\Lab2\Generics\bin\Debug\netcoreapp3.1\Generics.pdb
+C:\Users\Home\Source\Repos\ED2Lab2-1223319-1003519\Lab2\Generics\obj\Debug\netcoreapp3.1\Generics.csprojAssemblyReference.cache
+C:\Users\Home\Source\Repos\ED2Lab2-1223319-1003519\Lab2\Generics\obj\Debug\netcoreapp3.1\Generics.AssemblyInfoInputs.cache
+C:\Users\Home\Source\Repos\ED2Lab2-1223319-1003519\Lab2\Generics\obj\Debug\netcoreapp3.1\Generics.AssemblyInfo.cs
+C:\Users\Home\Source\Repos\ED2Lab2-1223319-1003519\Lab2\Generics\obj\Debug\netcoreapp3.1\Generics.csproj.CoreCompileInputs.cache
+C:\Users\Home\Source\Repos\ED2Lab2-1223319-1003519\Lab2\Generics\obj\Debug\netcoreapp3.1\Generics.dll
+C:\Users\Home\Source\Repos\ED2Lab2-1223319-1003519\Lab2\Generics\obj\Debug\netcoreapp3.1\Generics.pdb
