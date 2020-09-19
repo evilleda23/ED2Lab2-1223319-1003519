@@ -13,7 +13,7 @@ namespace TestBTree
             {
                 Console.WriteLine("Ingrese el numero del grado para el arbol");
                 int grado = int.Parse(Console.ReadLine());
-                BTree<FixedInt> tree = new BTree<FixedInt>("..//..//..//test.txt", grado);
+                BTree<FixedInt> tree = new BTree<FixedInt>("..//..//..//test.txt", grado, new FixedInt().TextLength);
                 int backmenu = 0;
                 do
                 {
@@ -92,7 +92,7 @@ namespace TestBTree
             }
         }
 
-        public struct FixedInt : IFixedSizeText, IComparable
+        public class FixedInt : IFixedSizeText, IComparable
         {
             public int Value { get; set; }
 
