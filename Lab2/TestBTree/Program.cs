@@ -103,12 +103,12 @@ namespace TestBTree
                 return this.Value.CompareTo(((FixedInt)obj).Value);
             }
 
-            public void CreateFromFixedText(string text)
+            public IFixedSizeText CreateFromFixedText(string text)
             {
                 if (text.Trim() != "")
-                    Value = int.Parse(text);
+                    return new FixedInt { Value = int.Parse(text.Trim()) };
                 else
-                    Value = 0;
+                    return null;
             }
 
             public string ToFixedString()

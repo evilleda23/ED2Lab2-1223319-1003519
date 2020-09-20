@@ -46,6 +46,16 @@ namespace Generics
             return true;
         }
 
+        public bool IsLeaf()
+        {
+            foreach (int item in Sons)
+            {
+                if (item != 0)
+                    return false;
+            }
+            return true;
+        }
+
         private string FixValue(T val)
         {
             if (val != null)
@@ -54,20 +64,22 @@ namespace Generics
                 return new string(' ', ValueTextLength);
         }
 
-        public void CreateFromFixedText(string text)
+        public IFixedSizeText CreateFromFixedText(string text)
         {
+            Node<T> aux = new Node<T>(ID, Degree, ValueTextLength);
             text = text.Remove(0, 12);
             for (int i = 0; i < Degree; i++)
             {
-                Sons[i] = int.Parse(text.Substring(0, 11));
+                aux.Sons[i] = int.Parse(text.Substring(0, 11));
                 text = text.Remove(0, 12);
             }
             for (int i = 0; i < Degree - 1; i++)
             {
-                Values[i] = new T();
-                Values[i].CreateFromFixedText(text.Substring(0, ValueTextLength));
+                T aux2 = new T();
+                aux.Values[i] = (T)aux2.CreateFromFixedText(text.Substring(0, ValueTextLength));
                 text = text.Remove(0, ValueTextLength + 1);
             }
+            return aux;
         }
     }
 }

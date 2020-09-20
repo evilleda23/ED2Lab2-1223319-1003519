@@ -23,13 +23,25 @@ namespace Generics
             if (metadata != null)
             {
                 var data = metadata.Split("|");
-                Root = int.Parse(data[0]);
-                NextPosition = int.Parse(data[1]);
+                if (Degree != int.Parse(data[0]))
+                {
+                    using StreamWriter writer = new StreamWriter(file, Encoding.ASCII);
+                    writer.WriteLine("5|1|2");
+                    var sample = new Node<T>(1, Degree, ValueTextLength);
+                    writer.WriteLine(sample.ToFixedString());
+                    Root = 1;
+                    NextPosition = 2;
+                }
+                else
+                {
+                    Root = int.Parse(data[1]);
+                    NextPosition = int.Parse(data[2]);
+                }
             }
             else
             {
                 using StreamWriter writer = new StreamWriter(file, Encoding.ASCII);
-                writer.WriteLine("1|2");
+                writer.WriteLine("5|1|2");
                 var sample = new Node<T>(1, Degree, ValueTextLength);
                 writer.WriteLine(sample.ToFixedString());
                 Root = 1;
@@ -45,9 +57,48 @@ namespace Generics
         private void Add(T val, int pos)
         {
             var node = ChargeNode(pos);
+            if (node.IsLeaf())
+                Insert(node, val);
+            else
+            {
+                int i = 0;
+                while (node.Values[i] != null && i < Degree - 1)
+                {
+                    if (val.CompareTo(node.Values[i]) < 0)
+                        Add(val, node.Sons[i]);
+                    else if (val.CompareTo(node.Values[i]) == 0)
+                        break;
+                    i++;
+                }
+                if (val.CompareTo(node.Values[i]) > 0)
+                    Add(val, node.Sons[i + 1]);
+            }
+        }
+
+        private void Insert(Node<T> node, T val)
+        {
             if (node.IsFull())
             {
 
+            }
+            else
+            {
+                int i = 0;
+                while (node.Values[i] != null && i < Degree - 1)
+                {
+                    if (val.CompareTo(node.Values[i]) < 0)
+                    {
+                        T aux = node.Values[i];
+                        node.Values[i] = val;
+                        val = aux;
+                    }
+                    else if (val.CompareTo(node.Values[i]) == 0)
+                        break;
+                    i++;
+                }
+                if (node.Values[i] == null)
+                    node.Values[i] = val;
+                Write(node.ToFixedString(), node.ID);
             }
         }
 
@@ -61,8 +112,25 @@ namespace Generics
             }
             string text = reader.ReadLine() + "|";
             var node = new Node<T>(id, Degree, ValueTextLength);
-            node.CreateFromFixedText(text);
-            return node;
+            var aux = (Node<T>)node.CreateFromFixedText(text);
+            return aux;
+        }
+
+        private void Write(string text, int id)
+        {
+            var file = new FileStream(Path, FileMode.OpenOrCreate);
+            using StreamReader reader = new StreamReader(file, Encoding.ASCII);
+            string tree = "";
+            for (int i = 0; i < id; i++)
+                tree += reader.ReadLine() + "\r\n";
+            tree += text + "\r\n";
+            reader.ReadLine();
+            while (!reader.EndOfStream)
+                tree += reader.ReadLine() + "\r\n";
+            file.Close();
+            reader.Close();
+            using StreamWriter writer = new StreamWriter(Path, false);
+            writer.Write(tree);
         }
     }
 }

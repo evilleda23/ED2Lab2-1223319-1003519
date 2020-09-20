@@ -9,6 +9,6 @@ namespace Generics
         public int TextLength { get; }
 
         public string ToFixedString();
-        abstract void CreateFromFixedText(string text);
+        abstract IFixedSizeText CreateFromFixedText(string text);
     }
 }
