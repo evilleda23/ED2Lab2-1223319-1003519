@@ -8,6 +8,7 @@ namespace Generics
     {
         public int ID;
         public int Degree;
+        public int Father;
         public T[] Values;
         public int[] Sons;
         public int TextLength => ToFixedString().Length;
@@ -19,12 +20,13 @@ namespace Generics
             Degree = deg;
             Values = new T[Degree - 1];
             Sons = new int[Degree];
+            Father = 0;
             ValueTextLength = valLength;
         }
 
         public string ToFixedString()
         {
-            string text = $"{ID:00000000000;-0000000000}";
+            string text = $"{ID:00000000000;-0000000000}|{Father:00000000000;-0000000000}";
             foreach (int item in Sons)
             {
                 text += $"|{item:00000000000;-0000000000}";
@@ -67,6 +69,8 @@ namespace Generics
         public IFixedSizeText CreateFromFixedText(string text)
         {
             Node<T> aux = new Node<T>(ID, Degree, ValueTextLength);
+            text = text.Remove(0, 12);
+            aux.Father = int.Parse(text.Substring(0, 11));
             text = text.Remove(0, 12);
             for (int i = 0; i < Degree; i++)
             {

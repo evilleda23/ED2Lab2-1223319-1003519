@@ -14,6 +14,7 @@ namespace TestBTree
                 Console.WriteLine("Ingrese el numero del grado para el arbol");
                 int grado = int.Parse(Console.ReadLine());
                 BTree<FixedInt> tree = new BTree<FixedInt>("..//..//..//test.txt", grado, new FixedInt().TextLength);
+                tree.Clear();
                 int backmenu = 0;
                 do
                 {
