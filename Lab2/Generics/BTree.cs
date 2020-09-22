@@ -166,6 +166,64 @@ namespace Generics
             }
         }
 
+        public T Search(T val)
+        {
+            if (Root != 0)
+            {
+                int pos = SearchNode(Root, val);
+                if (pos != 0)
+                {
+                    var node = ChargeNode(pos);
+                    for (int i = 0; i < Degree - 1; i++)
+                    {
+                        if (node.Values[i] != null)
+                        {
+                            if (val.CompareTo(node.Values[i]) == 0)
+                                return val;
+                        }
+                    }
+                    return default;
+                }
+                else
+                    return default;
+            }
+            else
+                return default;
+        }
+
+        private int SearchNode(int pos, T val)
+        {
+            var node = ChargeNode(pos);
+            for (int i = 0; i < Degree - 1; i++)
+            {
+                if (node.Values[i] != null)
+                {
+                    if (val.CompareTo(node.Values[i]) == 0)
+                        return pos;
+                    else if (val.CompareTo(node.Values[i]) < 0 && node.Sons[i] != 0)
+                        return SearchNode(node.Sons[i], val);
+                }
+            }
+            if (node.Sons[Degree - 1] != 0)
+                return SearchNode(node.Sons[Degree - 1], val);
+            return 0;
+        }
+
+        public bool Delete(T val)
+        {
+            if (Root != 0)
+            {
+                if (SearchNode(Root, val) != 0)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+                return false;
+        }
+
         public List<T> Preorden()
         {
             if (Root != 0)
