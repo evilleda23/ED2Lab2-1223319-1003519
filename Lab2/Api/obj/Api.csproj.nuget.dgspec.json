@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\Api.csproj": {}
+    "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\Api.csproj": {
+    "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\Api.csproj",
-        "projectName": "Api",
-        "projectPath": "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\Api.csproj",
+        "projectUniqueName": "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\api.csproj",
+        "projectName": "api",
+        "projectPath": "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\api.csproj",
         "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\obj\\",
         "projectStyle": "PackageReference",

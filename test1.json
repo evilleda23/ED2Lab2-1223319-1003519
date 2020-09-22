@@ -1,0 +1,194 @@
+[
+  {
+    "director": null,
+    "imdbRating": 6.1,
+    "genre": null,
+    "releaseDate": "Jun 12 1998",
+    "rottenTomatoesRating": 0,
+    "title": "The Land Girls"
+  },
+  {
+    "director": null,
+    "imdbRating": 6.9,
+    "genre": "Drama",
+    "releaseDate": "Aug 07 1998",
+    "rottenTomatoesRating": 0,
+    "title": "First Love, Last Rites"
+  },
+  {
+    "director": null,
+    "imdbRating": 6.8,
+    "genre": "Comedy",
+    "releaseDate": "Aug 28 1998",
+    "rottenTomatoesRating": 0,
+    "title": "I Married a Strange Person"
+  },
+  {
+    "director": null,
+    "imdbRating": 0,
+    "genre": "Comedy",
+    "releaseDate": "Sep 11 1998",
+    "rottenTomatoesRating": 13,
+    "title": "Let's Talk About Sex"
+  },
+  {
+    "director": null,
+    "imdbRating": 3.4,
+    "genre": "Drama",
+    "releaseDate": "Oct 09 1998",
+    "rottenTomatoesRating": 62,
+    "title": "Slam"
+  },
+  {
+    "director": null,
+    "imdbRating": 0,
+    "genre": null,
+    "releaseDate": "Jan 15 1999",
+    "rottenTomatoesRating": 0,
+    "title": "Mississippi Mermaid"
+  },
+  {
+    "director": "Christopher Nolan",
+    "imdbRating": 7.7,
+    "genre": null,
+    "releaseDate": "Apr 04 1999",
+    "rottenTomatoesRating": 0,
+    "title": "Following"
+  },
+  {
+    "director": null,
+    "imdbRating": 3.8,
+    "genre": "Comedy",
+    "releaseDate": "Apr 09 1999",
+    "rottenTomatoesRating": 0,
+    "title": "Foolish"
+  },
+  {
+    "director": "Roman Polanski",
+    "imdbRating": 5.8,
+    "genre": null,
+    "releaseDate": "Jul 01 1986",
+    "rottenTomatoesRating": 25,
+    "title": "Pirates"
+  },
+  {
+    "director": null,
+    "imdbRating": 7,
+    "genre": null,
+    "releaseDate": "Dec 31 2046",
+    "rottenTomatoesRating": 86,
+    "title": "Duel in the Sun"
+  },
+  {
+    "director": null,
+    "imdbRating": 7,
+    "genre": null,
+    "releaseDate": "Oct 07 1963",
+    "rottenTomatoesRating": 81,
+    "title": "Tom Jones"
+  },
+  {
+    "director": null,
+    "imdbRating": 7.5,
+    "genre": "Musical",
+    "releaseDate": "Dec 11 1968",
+    "rottenTomatoesRating": 84,
+    "title": "Oliver!"
+  },
+  {
+    "director": null,
+    "imdbRating": 8.4,
+    "genre": null,
+    "releaseDate": "Dec 25 1962",
+    "rottenTomatoesRating": 97,
+    "title": "To Kill A Mockingbird"
+  },
+  {
+    "director": "Richard Fleischer",
+    "imdbRating": 0,
+    "genre": null,
+    "releaseDate": "Sep 23 1970",
+    "rottenTomatoesRating": 0,
+    "title": "Tora, Tora, Tora"
+  },
+  {
+    "director": null,
+    "imdbRating": 6.8,
+    "genre": null,
+    "releaseDate": "Mar 01 1987",
+    "rottenTomatoesRating": 87,
+    "title": "Hollywood Shuffle"
+  },
+  {
+    "director": null,
+    "imdbRating": 0,
+    "genre": null,
+    "releaseDate": "Sep 17 2020",
+    "rottenTomatoesRating": 0,
+    "title": "Over the Hill to the Poorhouse"
+  },
+  {
+    "director": null,
+    "imdbRating": 7,
+    "genre": null,
+    "releaseDate": "Aug 01 2044",
+    "rottenTomatoesRating": 0,
+    "title": "Wilson"
+  },
+  {
+    "director": "Blake Edwards",
+    "imdbRating": 6.1,
+    "genre": null,
+    "releaseDate": "Jan 01 1970",
+    "rottenTomatoesRating": 0,
+    "title": "Darling Lili"
+  },
+  {
+    "director": null,
+    "imdbRating": 2.5,
+    "genre": null,
+    "releaseDate": "Oct 05 1956",
+    "rottenTomatoesRating": 90,
+    "title": "The Ten Commandments"
+  },
+  {
+    "director": "Sidney Lumet",
+    "imdbRating": 8.9,
+    "genre": "Drama",
+    "releaseDate": "Apr 13 1957",
+    "rottenTomatoesRating": 0,
+    "title": "12 Angry Men"
+  },
+  {
+    "director": "Terry Gilliam",
+    "imdbRating": 8.1,
+    "genre": "Drama",
+    "releaseDate": "Dec 27 1995",
+    "rottenTomatoesRating": 0,
+    "title": "Twelve Monkeys"
+  },
+  {
+    "director": null,
+    "imdbRating": 7,
+    "genre": "Drama",
+    "releaseDate": "Nov 09 1972",
+    "rottenTomatoesRating": 57,
+    "title": "1776"
+  },
+  {
+    "director": "Steven Spielberg",
+    "imdbRating": 5.6,
+    "genre": "Comedy",
+    "releaseDate": "Dec 14 1979",
+    "rottenTomatoesRating": 33,
+    "title": "1941"
+  },
+  {
+    "director": null,
+    "imdbRating": 6.3,
+    "genre": "Thriller/Suspense",
+    "releaseDate": "Jun 29 2007",
+    "rottenTomatoesRating": 0,
+    "title": "Chacun sa nuit"
+  }
+]

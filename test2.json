@@ -1,0 +1,290 @@
+[
+  {
+    "director": "Stanley Kubrick",
+    "imdbRating": 8.4,
+    "genre": null,
+    "releaseDate": "Apr 02 1968",
+    "rottenTomatoesRating": 96,
+    "title": "2001: A Space Odyssey"
+  },
+  {
+    "director": "Richard Fleischer",
+    "imdbRating": 0,
+    "genre": "Adventure",
+    "releaseDate": "Dec 23 1954",
+    "rottenTomatoesRating": 92,
+    "title": "20,000 Leagues Under the Sea"
+  },
+  {
+    "director": null,
+    "imdbRating": 0,
+    "genre": "Adventure",
+    "releaseDate": "Dec 24 2016",
+    "rottenTomatoesRating": 0,
+    "title": "20,000 Leagues Under the Sea"
+  },
+  {
+    "director": "Shane Meadows",
+    "imdbRating": 6.9,
+    "genre": "Comedy",
+    "releaseDate": "Apr 15 1998",
+    "rottenTomatoesRating": 0,
+    "title": "24 7: Twenty Four Seven"
+  },
+  {
+    "director": "Michael Polish",
+    "imdbRating": 7.1,
+    "genre": "Drama",
+    "releaseDate": "Jul 30 1999",
+    "rottenTomatoesRating": 77,
+    "title": "Twin Falls Idaho"
+  },
+  {
+    "director": null,
+    "imdbRating": 0,
+    "genre": "Action",
+    "releaseDate": "Apr 03 2008",
+    "rottenTomatoesRating": 0,
+    "title": "Three Kingdoms: Resurrection of the Dragon"
+  },
+  {
+    "director": "Leonard Nimoy",
+    "imdbRating": 5.7,
+    "genre": "Comedy",
+    "releaseDate": "Nov 25 1987",
+    "rottenTomatoesRating": 0,
+    "title": "3 Men and a Baby"
+  },
+  {
+    "director": null,
+    "imdbRating": 3.2,
+    "genre": "Action",
+    "releaseDate": "May 06 1994",
+    "rottenTomatoesRating": 17,
+    "title": "3 Ninjas Kick Back"
+  },
+  {
+    "director": null,
+    "imdbRating": 6,
+    "genre": "Drama",
+    "releaseDate": "Sep 28 2005",
+    "rottenTomatoesRating": 0,
+    "title": "Forty Shades of Blue"
+  },
+  {
+    "director": null,
+    "imdbRating": 7.7,
+    "genre": "Musical",
+    "releaseDate": "Mar 09 2033",
+    "rottenTomatoesRating": 95,
+    "title": "42nd Street"
+  },
+  {
+    "director": "Robert Rodriguez",
+    "imdbRating": 6.4,
+    "genre": "Comedy",
+    "releaseDate": "Dec 25 1995",
+    "rottenTomatoesRating": 14,
+    "title": "Four Rooms"
+  },
+  {
+    "director": "Alan Alda",
+    "imdbRating": 7,
+    "genre": "Comedy",
+    "releaseDate": "May 22 1981",
+    "rottenTomatoesRating": 71,
+    "title": "The Four Seasons"
+  },
+  {
+    "director": "Mike Newell",
+    "imdbRating": 7.1,
+    "genre": "Romantic Comedy",
+    "releaseDate": "Mar 09 1994",
+    "rottenTomatoesRating": 96,
+    "title": "Four Weddings and a Funeral"
+  },
+  {
+    "director": null,
+    "imdbRating": 7.4,
+    "genre": null,
+    "releaseDate": "Oct 18 2006",
+    "rottenTomatoesRating": 97,
+    "title": "51 Birch Street"
+  },
+  {
+    "director": null,
+    "imdbRating": 6.8,
+    "genre": "Drama",
+    "releaseDate": "Dec 31 1962",
+    "rottenTomatoesRating": 57,
+    "title": "55 Days at Peking"
+  },
+  {
+    "director": "Adrian Lyne",
+    "imdbRating": 5.4,
+    "genre": "Drama",
+    "releaseDate": "Feb 21 1986",
+    "rottenTomatoesRating": 0,
+    "title": "Nine 1/2 Weeks"
+  },
+  {
+    "director": null,
+    "imdbRating": 4.9,
+    "genre": "Adventure",
+    "releaseDate": "Jul 04 2008",
+    "rottenTomatoesRating": 0,
+    "title": "AstÈrix aux Jeux Olympiques"
+  },
+  {
+    "director": "James Cameron",
+    "imdbRating": 7.6,
+    "genre": "Action",
+    "releaseDate": "Aug 09 1989",
+    "rottenTomatoesRating": 88,
+    "title": "The Abyss"
+  },
+  {
+    "director": null,
+    "imdbRating": 4.6,
+    "genre": "Action",
+    "releaseDate": "Feb 12 1988",
+    "rottenTomatoesRating": 10,
+    "title": "Action Jackson"
+  },
+  {
+    "director": "Tom Shadyac",
+    "imdbRating": 6.6,
+    "genre": "Comedy",
+    "releaseDate": "Feb 04 1994",
+    "rottenTomatoesRating": 49,
+    "title": "Ace Ventura: Pet Detective"
+  },
+  {
+    "director": "Steve Oedekerk",
+    "imdbRating": 5.6,
+    "genre": "Comedy",
+    "releaseDate": "Nov 10 1995",
+    "rottenTomatoesRating": 0,
+    "title": "Ace Ventura: When Nature Calls"
+  },
+  {
+    "director": null,
+    "imdbRating": 0,
+    "genre": "Horror",
+    "releaseDate": "Mar 27 1986",
+    "rottenTomatoesRating": 31,
+    "title": "April Fool's Day"
+  },
+  {
+    "director": null,
+    "imdbRating": 5.7,
+    "genre": "Romantic Comedy",
+    "releaseDate": "Mar 26 1999",
+    "rottenTomatoesRating": 0,
+    "title": "Among Giants"
+  },
+  {
+    "director": null,
+    "imdbRating": 7.1,
+    "genre": "Musical",
+    "releaseDate": "May 17 1950",
+    "rottenTomatoesRating": 100,
+    "title": "Annie Get Your Gun"
+  },
+  {
+    "director": null,
+    "imdbRating": 6.7,
+    "genre": "Musical",
+    "releaseDate": "Jul 28 1951",
+    "rottenTomatoesRating": 20,
+    "title": "Alice in Wonderland"
+  },
+  {
+    "director": null,
+    "imdbRating": 7.3,
+    "genre": "Adventure",
+    "releaseDate": "Aug 25 1995",
+    "rottenTomatoesRating": 0,
+    "title": "The Princess and the Cobbler"
+  },
+  {
+    "director": "John Wayne",
+    "imdbRating": 5.9,
+    "genre": "Western",
+    "releaseDate": "Oct 24 1960",
+    "rottenTomatoesRating": 54,
+    "title": "The Alamo"
+  },
+  {
+    "director": null,
+    "imdbRating": 0,
+    "genre": "Drama",
+    "releaseDate": "Dec 31 1937",
+    "rottenTomatoesRating": 0,
+    "title": "Alexander's Ragtime Band"
+  },
+  {
+    "director": "Frank Marshall",
+    "imdbRating": 3.2,
+    "genre": "Adventure",
+    "releaseDate": "Jan 15 1993",
+    "rottenTomatoesRating": 71,
+    "title": "Alive"
+  },
+  {
+    "director": "Costa-Gavras",
+    "imdbRating": 7.4,
+    "genre": "Drama",
+    "releaseDate": "Jan 24 2003",
+    "rottenTomatoesRating": 0,
+    "title": "Amen"
+  },
+  {
+    "director": "George Lucas",
+    "imdbRating": 7.6,
+    "genre": "Comedy",
+    "releaseDate": "Aug 11 1973",
+    "rottenTomatoesRating": 97,
+    "title": "American Graffiti"
+  },
+  {
+    "director": "Sam Firstenberg",
+    "imdbRating": 3.7,
+    "genre": "Action",
+    "releaseDate": "Dec 31 1986",
+    "rottenTomatoesRating": 0,
+    "title": "American Ninja 2: The Confrontation"
+  },
+  {
+    "director": "Rob Reiner",
+    "imdbRating": 6.8,
+    "genre": "Romantic Comedy",
+    "releaseDate": "Nov 17 1995",
+    "rottenTomatoesRating": 90,
+    "title": "The American President"
+  },
+  {
+    "director": "Woody Allen",
+    "imdbRating": 8.2,
+    "genre": "Comedy",
+    "releaseDate": "Apr 20 1977",
+    "rottenTomatoesRating": 98,
+    "title": "Annie Hall"
+  },
+  {
+    "director": null,
+    "imdbRating": 6.1,
+    "genre": "Horror",
+    "releaseDate": "Sep 08 2000",
+    "rottenTomatoesRating": 0,
+    "title": "Anatomie"
+  },
+  {
+    "director": "Stephen Sommers",
+    "imdbRating": 5.8,
+    "genre": "Adventure",
+    "releaseDate": "Apr 02 1993",
+    "rottenTomatoesRating": 62,
+    "title": "The Adventures of Huck Finn"
+  }
+]
