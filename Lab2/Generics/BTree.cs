@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -17,42 +18,17 @@ namespace Generics
             Path = path;
             Degree = degree;
             ValueTextLength = valLength;
-            var file = new FileStream(Path, FileMode.OpenOrCreate);
-            using StreamReader reader = new StreamReader(file, Encoding.ASCII);
-            string metadata = reader.ReadLine();
-            if (metadata != null)
-            {
-                var data = metadata.Split("|");
-                if (Degree != int.Parse(data[0]))
-                {
-                    file.Close();
-                    reader.Close();
-                    using StreamWriter writer = new StreamWriter(Path, false);
-                    writer.WriteLine($"{Degree}|1|2");
-                    var sample = new Node<T>(1, Degree, ValueTextLength);
-                    writer.WriteLine(sample.ToFixedString());
-                    Root = 1;
-                    NextPosition = 2;
-                }
-                else
-                {
-                    Root = int.Parse(data[1]);
-                    NextPosition = int.Parse(data[2]);
-                }
-            }
-            else
-            {
-                using StreamWriter writer = new StreamWriter(file, Encoding.ASCII);
-                writer.WriteLine($"{Degree}|1|2");
-                var sample = new Node<T>(1, Degree, ValueTextLength);
-                writer.WriteLine(sample.ToFixedString());
-                Root = 1;
-                NextPosition = 2;
-            }
+            CreateFile();
         }
 
         public void Add(T val)
         {
+            var file = new FileStream(Path, FileMode.OpenOrCreate);
+            using StreamReader reader = new StreamReader(file, Encoding.ASCII);
+            string metadata = reader.ReadLine();
+            file.Close();
+            if (metadata == null)
+                CreateFile();
             Add(val, Root);
         }
 
@@ -190,6 +166,84 @@ namespace Generics
             }
         }
 
+        public List<T> Preorden()
+        {
+            if (Root != 0)
+            {
+                List<T> path = new List<T>();
+                Preorden(ChargeNode(Root), path);
+                return path;
+            }
+            else
+                return new List<T>();
+        }
+
+        private void Preorden(Node<T> pos, List<T> path)
+        {
+            for (int i = 0; i < Degree - 1; i++)
+            {
+                if (pos.Values[i] != null)
+                    path.Add(pos.Values[i]);
+            }
+            for (int i = 0; i < Degree; i++)
+            {
+                if (pos.Sons[i] != 0)
+                    Preorden(ChargeNode(pos.Sons[i]), path);
+            }
+        }
+
+        public List<T> Inorden()
+        {
+            if (Root != 0)
+            {
+                List<T> path = new List<T>();
+                Inorden(ChargeNode(Root), path);
+                return path;
+            }
+            else
+                return new List<T>();
+        }
+
+        private void Inorden(Node<T> pos, List<T> path)
+        {
+            for (int i = 0; i < Degree - 1; i++)
+            {
+                if (pos.Sons[i] != 0)
+                    Inorden(ChargeNode(pos.Sons[i]), path);
+                if (pos.Values[i] != null)
+                    path.Add(pos.Values[i]);
+            }
+            if (pos.Sons[Degree - 1] != 0)
+                Inorden(ChargeNode(pos.Sons[Degree - 1]), path);
+        }
+
+        public List<T> Postorden()
+        {
+            if (Root != 0)
+            {
+                List<T> path = new List<T>();
+                Postorden(ChargeNode(Root), path);
+                return path;
+            }
+            else
+                return new List<T>();
+        }
+
+        private void Postorden(Node<T> pos, List<T> path)
+        {
+            for (int i = 0; i < Degree; i++)
+            {
+                if (pos.Sons[i] != 0)
+                    Postorden(ChargeNode(pos.Sons[i]), path);
+            }
+            for (int i = 0; i < Degree - 1; i++)
+            {
+                if (pos.Values[i] != null)
+                    path.Add(pos.Values[i]);
+            }
+        }
+
+
         private Node<T> ChargeNode(int id)
         {
             var file = new FileStream(Path, FileMode.OpenOrCreate);
@@ -221,15 +275,47 @@ namespace Generics
             writer.Write(tree);
         }
 
+        private void CreateFile()
+        {
+            var file = new FileStream(Path, FileMode.OpenOrCreate);
+            using StreamReader reader = new StreamReader(file, Encoding.ASCII);
+            string metadata = reader.ReadLine();
+            if (metadata != null)
+            {
+                var data = metadata.Split("|");
+                if (Degree != int.Parse(data[0]))
+                {
+                    file.Close();
+                    reader.Close();
+                    using StreamWriter writer = new StreamWriter(Path, false);
+                    writer.WriteLine($"{Degree}|1|2");
+                    var sample = new Node<T>(1, Degree, ValueTextLength);
+                    writer.WriteLine(sample.ToFixedString());
+                    Root = 1;
+                    NextPosition = 2;
+                }
+                else
+                {
+                    Root = int.Parse(data[1]);
+                    NextPosition = int.Parse(data[2]);
+                }
+            }
+            else
+            {
+                using StreamWriter writer = new StreamWriter(file, Encoding.ASCII);
+                writer.WriteLine($"{Degree}|1|2");
+                var sample = new Node<T>(1, Degree, ValueTextLength);
+                writer.WriteLine(sample.ToFixedString());
+                Root = 1;
+                NextPosition = 2;
+            }
+        }
+
         public void Clear()
         {
-            var file = new FileStream(Path, FileMode.Create);
-            using StreamWriter writer = new StreamWriter(file, Encoding.ASCII);
-            writer.WriteLine($"{Degree}|1|2");
-            var sample = new Node<T>(1, Degree, ValueTextLength);
-            writer.WriteLine(sample.ToFixedString());
-            Root = 1;
-            NextPosition = 2;
+            File.Delete(Path);
+            Root = 0;
+            NextPosition = 1;
         }
     }
 }

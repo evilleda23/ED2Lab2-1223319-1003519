@@ -40,14 +40,11 @@ namespace TestBTree
                     backmenu = int.Parse(Console.ReadLine());
                 } while (backmenu == 1);
                 Console.WriteLine("Preorden:");
-                //Console.WriteLine(String(tree.Preorden()));
+                Console.WriteLine(String(tree.Preorden()));
                 Console.WriteLine("Inorden:");
-                //Console.WriteLine(String(tree.Inorden()));
+                Console.WriteLine(String(tree.Inorden()));
                 Console.WriteLine("Postorden:");
-                //Console.WriteLine(String(tree.Postorden()));
-                Console.WriteLine("Cantidad de elementos:");
-                //Console.WriteLine(tree.Count.ToString());
-                //tree.Clear();
+                Console.WriteLine(String(tree.Postorden()));
                 Console.ReadLine();
             }
             catch
@@ -56,12 +53,12 @@ namespace TestBTree
             }
         }
 
-        static string String(List<int> val)
+        static string String(List<FixedInt> val)
         {
             string text = "";
-            foreach (int n in val)
+            foreach (FixedInt n in val)
             {
-                text += n.ToString() + ",";
+                text += n.Value.ToString() + ",";
             }
             if (text.EndsWith(','))
                 text = text.Remove(text.Length - 1);
