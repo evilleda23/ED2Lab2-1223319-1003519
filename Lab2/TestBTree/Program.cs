@@ -26,9 +26,7 @@ namespace TestBTree
                             Console.WriteLine("Ingrese los valores");
                             var val = Console.ReadLine().Split(',');
                             foreach (string n in val)
-                            {
                                 tree.Add(new FixedInt { Value = int.Parse(n) });
-                            }
                             break;
                         case 2:
                             Console.WriteLine("Coloque el txt encima de la consola");
@@ -37,6 +35,27 @@ namespace TestBTree
                             break;
                     }
                     Console.WriteLine("¿Desea seguir ingresando valores? 1.Si 2.No");
+                    backmenu = int.Parse(Console.ReadLine());
+                } while (backmenu == 1);
+                Console.WriteLine("Preorden:");
+                Console.WriteLine(String(tree.Preorden()));
+                Console.WriteLine("Inorden:");
+                Console.WriteLine(String(tree.Inorden()));
+                Console.WriteLine("Postorden:");
+                Console.WriteLine(String(tree.Postorden()));
+                backmenu = 0;
+                do
+                {
+                    Console.WriteLine("Ingrese los valores por eliminar separados por comas");
+                    var val = Console.ReadLine().Split(',');
+                    foreach (string n in val)
+                    {
+                        if (tree.Delete(new FixedInt { Value = int.Parse(n) }))
+                            Console.WriteLine($"El número {n} fue eliminado del árbol.");
+                        else
+                            Console.WriteLine($"El número {n} no se encontró en el árbol.");
+                    }
+                    Console.WriteLine("¿Desea seguir eliminando valores? 1.Si 2.No");
                     backmenu = int.Parse(Console.ReadLine());
                 } while (backmenu == 1);
                 Console.WriteLine("Preorden:");
@@ -87,31 +106,6 @@ namespace TestBTree
             catch
             {
                 Console.WriteLine("Carga del archivo erronea, verifique el formato del archivo");
-            }
-        }
-
-        public class FixedInt : IFixedSizeText, IComparable
-        {
-            public int Value { get; set; }
-
-            public int TextLength => ToFixedString().Length;
-
-            public int CompareTo(object obj)
-            {
-                return this.Value.CompareTo(((FixedInt)obj).Value);
-            }
-
-            public IFixedSizeText CreateFromFixedText(string text)
-            {
-                if (text.Trim() != "")
-                    return new FixedInt { Value = int.Parse(text.Trim()) };
-                else
-                    return null;
-            }
-
-            public string ToFixedString()
-            {
-                return $"{Value:0000;-000}";
             }
         }
     }

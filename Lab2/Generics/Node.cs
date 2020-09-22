@@ -58,6 +58,20 @@ namespace Generics
             return true;
         }
 
+        public bool IsInUnderflow()
+        {
+            int n = 0;
+            foreach (T item in Values)
+            {
+                if (item != null)
+                    n++;
+            }
+            if (n < (Degree - 1) / 2)
+                return true;
+            else
+                return false;
+        }
+
         private string FixValue(T val)
         {
             if (val != null)

@@ -16,6 +16,8 @@ namespace Generics
         public BTree(string path, int degree, int valLength)
         {
             Path = path;
+            if (degree < 3)
+                degree = 3;
             Degree = degree;
             ValueTextLength = valLength;
             CreateFile();
@@ -203,6 +205,8 @@ namespace Generics
                     else if (val.CompareTo(node.Values[i]) < 0 && node.Sons[i] != 0)
                         return SearchNode(node.Sons[i], val);
                 }
+                else
+                    return SearchNode(node.Sons[i], val);
             }
             if (node.Sons[Degree - 1] != 0)
                 return SearchNode(node.Sons[Degree - 1], val);
@@ -213,8 +217,10 @@ namespace Generics
         {
             if (Root != 0)
             {
-                if (SearchNode(Root, val) != 0)
+                int pos = SearchNode(Root, val);
+                if (pos != 0)
                 {
+                    Remove(ChargeNode(pos), val);
                     return true;
                 }
                 else
@@ -222,6 +228,55 @@ namespace Generics
             }
             else
                 return false;
+        }
+
+        private void Remove(Node<T> node, T val)
+        {
+            bool deleted = false;
+            int originalPosition = 0;
+            for (int i = 0; i < Degree - 1; i++)
+            {
+                if (node.Values[i] != null)
+                {
+                    if (deleted && node.IsLeaf())
+                    {
+                        node.Values[i - 1] = node.Values[i];
+                        node.Values[i] = default;
+                    }
+                    if (node.Values[i] != null)
+                    {
+                        if (val.CompareTo(node.Values[i]) == 0)
+                        {
+                            originalPosition = i;
+                            node.Values[i] = default;
+                            deleted = true;
+                        }
+                    }
+                }
+            }
+            if (node.IsLeaf())
+            {
+                if (node.IsInUnderflow())
+                    Rearrange(node);
+                else
+                    Write(node.ToFixedString(), node.ID);
+            }
+            else
+            {
+                var aux = ChargeNode(node.Sons[originalPosition + 1]);
+                while(!aux.IsLeaf())
+                {
+                    aux = ChargeNode(aux.Sons[0]);
+                }
+                node.Values[originalPosition] = aux.Values[0];
+                Write(node.ToFixedString(), node.ID);
+                Remove(aux, aux.Values[0]);
+            }
+        }
+
+        private void Rearrange(Node<T> node)
+        {
+
         }
 
         public List<T> Preorden()
