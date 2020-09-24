@@ -48,6 +48,16 @@ namespace Generics
             return true;
         }
 
+        public bool IsEmpty()
+        {
+            foreach (T item in Values)
+            {
+                if (item != null)
+                    return false;
+            }
+            return true;
+        }
+
         public bool IsLeaf()
         {
             foreach (int item in Sons)
@@ -70,6 +80,20 @@ namespace Generics
                 return true;
             else
                 return false;
+        }
+
+        public bool CanLend()
+        {
+            int n = 0;
+            foreach (T item in Values)
+            {
+                if (item != null)
+                    n++;
+            }
+            if (n == (Degree - 1) / 2)
+                return false;
+            else
+                return true;
         }
 
         private string FixValue(T val)
