@@ -20,5 +20,6 @@ namespace api
         }
 
         public BTree<Movie> Tree;
+        public string path;
     }
 }

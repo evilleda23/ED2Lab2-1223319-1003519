@@ -27,20 +27,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Home\\.nuget\\packages\\": {}
+    "C:\\Users\\estua\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\Api.csproj",
-      "projectName": "Api",
-      "projectPath": "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\Api.csproj",
-      "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\obj\\",
+      "projectUniqueName": "C:\\Users\\estua\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\api.csproj",
+      "projectName": "api",
+      "projectPath": "C:\\Users\\estua\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\api.csproj",
+      "packagesPath": "C:\\Users\\estua\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\estua\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Api\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\estua\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -52,8 +59,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Generics\\Generics.csproj": {
-              "projectPath": "C:\\Users\\Home\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Generics\\Generics.csproj"
+            "C:\\Users\\estua\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Generics\\Generics.csproj": {
+              "projectPath": "C:\\Users\\estua\\Source\\Repos\\ED2Lab2-1223319-1003519\\Lab2\\Generics\\Generics.csproj"
             }
           }
         }
@@ -84,7 +91,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
