@@ -8,6 +8,7 @@ namespace api
 {
     public class Movie : IComparable, IFixedSizeText
     {
+        private string ID;
         public string Director { get; set; }
         public double ImdbRating { get; set; }
         public string Genre { get; set; }
@@ -17,10 +18,25 @@ namespace api
 
         public int TextLength => ToFixedString().Length;
 
+        public void SetID()
+        {
+            ID = Title + "-" + ReleaseDate.Substring(7);
+        }
+
+        public void SetID(string id)
+        {
+            ID = id;
+        }
+
+        public string GetID()
+        {
+            return ID;
+        }
+
         public int CompareTo(object obj)
         {
-            if (((Movie)obj).Title != null)
-                return this.Title.CompareTo(((Movie)obj).Title);
+            if (((Movie)obj).GetID() != null)
+                return this.ID.CompareTo(((Movie)obj).GetID());
             else
                 return 1;
         }
@@ -30,25 +46,26 @@ namespace api
             if (text.Trim() != "")
             {
                 Movie item = new Movie();
-                item.Director = text.Substring(0, 50);
+                item.Director = text.Substring(0, 50).Trim();
                 text = text.Remove(0, 51);
-                if (item.Director.Trim() == "")
+                if (item.Director == "")
                     item.Director = null;
                 item.ImdbRating = double.Parse(text.Substring(0, 3));
                 text = text.Remove(0, 4);
-                item.Genre = text.Substring(0, 50);
+                item.Genre = text.Substring(0, 50).Trim();
                 text = text.Remove(0, 51);
-                if (item.Genre.Trim() == "")
+                if (item.Genre == "")
                     item.Genre = null;
-                item.ReleaseDate = text.Substring(0, 11);
+                item.ReleaseDate = text.Substring(0, 11).Trim();
                 text = text.Remove(0, 12);
-                if (item.ReleaseDate.Trim() == "")
+                if (item.ReleaseDate == "")
                     item.ReleaseDate = null;
                 item.RottenTomatoesRating = int.Parse(text.Substring(0, 3));
                 text = text.Remove(0, 4);
-                item.Title = text.Substring(0, 50);
-                if (item.Title.Trim() == "")
+                item.Title = text.Trim();
+                if (item.Title == "")
                     item.Title = null;
+                item.SetID();
                 return item;
             }
             else
@@ -73,9 +90,9 @@ namespace api
                 text += new string(' ', 11) + ",";
             text += RottenTomatoesRating.ToString("000") + ",";
             if (Title != null)
-                text += string.Format("{0, -50}", Title) + ",";
+                text += string.Format("{0, -50}", Title);
             else
-                text += new string(' ', 50) + ",";
+                text += new string(' ', 50);
             return text;
         }
     }
