@@ -49,17 +49,13 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromForm] IFormFile file)
+        public IActionResult Create([FromBody] int order)
         {
             try
             {
-                using var content = new MemoryStream();
-                file.CopyToAsync(content);
-                var text = Encoding.ASCII.GetString(content.ToArray());
-                var deg = JsonSerializer.Deserialize<int>(text);
                 Movie testmovie = new Movie();
-                Storage.Instance.Tree = new BTree<Movie>(Storage.Instance.path, deg, testmovie.ToFixedString().Length);
-                return Ok();
+                Storage.Instance.Tree = new BTree<Movie>(Storage.Instance.path, order, testmovie.ToFixedString().Length);
+                return StatusCode(201);
             }
             catch
             {
@@ -77,17 +73,13 @@ namespace api.Controllers
 
         [HttpPost]
         [Route("populate")]
-        public IActionResult Add([FromForm] IFormFile file)
+        public IActionResult Add([FromBody] List<Movie> list)
         {
             try
             {
                 if (Storage.Instance.Tree != null)
                 {
-                    using var content = new MemoryStream();
-                    file.CopyToAsync(content);
-                    var text = Encoding.ASCII.GetString(content.ToArray());
-                    var list = JsonSerializer.Deserialize<List<Movie>>(text, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
-                    foreach (Movie item in list)
+                    foreach (var item in list)
                     {
                         item.SetID();
                         Storage.Instance.Tree.Add(item);

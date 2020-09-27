@@ -25,7 +25,7 @@ namespace TestBTree
                         case 1:
                             Console.WriteLine("Ingrese los valores");
                             var val = Console.ReadLine().Split(',');
-                            foreach (string n in val)
+                            foreach (var n in val)
                                 tree.Add(new FixedInt { Value = int.Parse(n) });
                             break;
                         case 2:
@@ -38,17 +38,17 @@ namespace TestBTree
                     backmenu = int.Parse(Console.ReadLine());
                 } while (backmenu == 1);
                 Console.WriteLine("Preorden:");
-                Console.WriteLine(String(tree.Preorden()));
+                Console.WriteLine(ImprimirListado(tree.Preorden()));
                 Console.WriteLine("Inorden:");
-                Console.WriteLine(String(tree.Inorden()));
+                Console.WriteLine(ImprimirListado(tree.Inorden()));
                 Console.WriteLine("Postorden:");
-                Console.WriteLine(String(tree.Postorden()));
+                Console.WriteLine(ImprimirListado(tree.Postorden()));
                 backmenu = 0;
                 do
                 {
                     Console.WriteLine("Ingrese los valores por eliminar separados por comas");
                     var val = Console.ReadLine().Split(',');
-                    foreach (string n in val)
+                    foreach (var n in val)
                     {
                         if (tree.Delete(new FixedInt { Value = int.Parse(n) }))
                             Console.WriteLine($"El número {n} fue eliminado del árbol.");
@@ -59,11 +59,11 @@ namespace TestBTree
                     backmenu = int.Parse(Console.ReadLine());
                 } while (backmenu == 1);
                 Console.WriteLine("Preorden:");
-                Console.WriteLine(String(tree.Preorden()));
+                Console.WriteLine(ImprimirListado(tree.Preorden()));
                 Console.WriteLine("Inorden:");
-                Console.WriteLine(String(tree.Inorden()));
+                Console.WriteLine(ImprimirListado(tree.Inorden()));
                 Console.WriteLine("Postorden:");
-                Console.WriteLine(String(tree.Postorden()));
+                Console.WriteLine(ImprimirListado(tree.Postorden()));
                 Console.ReadLine();
             }
             catch
@@ -72,10 +72,10 @@ namespace TestBTree
             }
         }
 
-        static string String(List<FixedInt> val)
+        static string ImprimirListado(List<FixedInt> val)
         {
             string text = "";
-            foreach (FixedInt n in val)
+            foreach (var n in val)
             {
                 text += n.Value.ToString() + ",";
             }
